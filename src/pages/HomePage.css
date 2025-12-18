@@ -1,0 +1,59 @@
+/* HomePage Component Styles */
+
+.homepage {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Error Container */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.error-container h2 {
+    font-size: 48px;
+    color: #ff6b6b;
+    margin: 0 0 20px 0;
+}
+
+.error-container p {
+    font-size: 18px;
+    color: #495057;
+    margin: 0 0 30px 0;
+    max-width: 500px;
+}
+
+.error-container button {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.error-container button:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .error-container h2 {
+        font-size: 36px;
+    }
+
+    .error-container p {
+        font-size: 16px;
+    }
+}

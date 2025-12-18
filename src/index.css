@@ -1,68 +1,230 @@
+/**
+ * Global Styles
+ * 
+ * PURPOSE: Base styles applied to entire application
+ * 
+ * INCLUDES:
+ * - CSS Reset: Removes browser default styles
+ * - Typography: Font family, sizes, weights
+ * - Colors: Brand colors and palette
+ * - Box Sizing: Better box model
+ * - Smooth Scrolling: Better UX
+ */
+
+/* ===== CSS RESET ===== */
+/* Remove default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Includes padding/border in width */
+}
+
+/* ===== ROOT VARIABLES ===== */
+/* CSS Custom Properties for consistent theming */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Brand Colors */
+  --primary-color: #ff6b6b;
+  --secondary-color: #2c3e50;
+  --accent-color: #667eea;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Neutral Colors */
+  --text-dark: #2c3e50;
+  --text-light: #868e96;
+  --background: #f8f9fa;
+  --white: #ffffff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+
+  /* Font Sizes */
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* ===== BASE STYLES ===== */
+html {
+  scroll-behavior: smooth;
+  /* Smooth scrolling for anchor links */
+  font-size: 16px;
+  /* Base font size for rem units */
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* Better font rendering */
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark);
+  background-color: var(--background);
+  line-height: 1.6;
   min-height: 100vh;
 }
 
+/* ===== TYPOGRAPHY ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.5rem;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* ===== IMAGES ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== BUTTONS ===== */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== LISTS ===== */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ===== INPUTS ===== */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ===== SCROLLBAR STYLING (Optional) ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* ===== RESPONSIVE BASE ===== */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+    /* Smaller base font on mobile */
   }
 }
+
+/**
+ * CSS CONCEPTS EXPLAINED:
+ * 
+ * 1. BOX-SIZING: border-box
+ *    - Width includes padding and border
+ *    - Easier to calculate sizes
+ *    - Standard in modern CSS
+ * 
+ * 2. CSS CUSTOM PROPERTIES (Variables)
+ *    - --variable-name: value
+ *    - Use: var(--variable-name)
+ *    - Easy to maintain consistent styling
+ *    - Can change globally
+ * 
+ * 3. REM vs PX
+ *    - rem: Relative to root font-size
+ *    - px: Absolute pixels
+ *    - rem better for accessibility
+ * 
+ * 4. TRANSITIONS
+ *    - Smooth animations between states
+ *    - transition: property duration easing
+ *    - Better user experience
+ * 
+ * 5. PSEUDO-CLASSES
+ *    - :hover, :focus, :active
+ *    - Style based on user interaction
+ *    - No JavaScript needed
+ */

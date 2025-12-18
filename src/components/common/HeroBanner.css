@@ -1,0 +1,117 @@
+/* HeroBanner Component Styles */
+
+.hero-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 60px 0;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Left Side - Text Content */
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-discount {
+    font-size: 32px;
+    margin: 0 0 30px 0;
+    font-weight: 600;
+    color: #ffd700;
+}
+
+.hero-button {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-button:active {
+    transform: translateY(0);
+}
+
+/* Right Side - Image */
+.hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 400px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed rgba(255, 255, 255, 0.3);
+}
+
+.image-placeholder span {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.image-placeholder p {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-discount {
+        font-size: 24px;
+    }
+
+    .hero-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    .image-placeholder {
+        width: 100%;
+        max-width: 300px;
+        height: 250px;
+    }
+}
